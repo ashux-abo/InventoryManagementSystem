@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InventoryManagementSystem.Services;
 
 namespace InventoryManagementSystem.Forms
 {
@@ -22,7 +23,47 @@ namespace InventoryManagementSystem.Forms
         {
             this.Hide(); 
             loginForm = new LoginForm();
-            loginForm.Show();
+            loginForm.ShowDialog();
+        }
+
+        private void registerBtn_Click(object sender, EventArgs e)
+        {
+            string email = emailTxt.Text.Trim();
+            string password = createPasswordTxt.Text;
+            string confirmPassword = confirmPassTxt.Text;
+
+            if(string.IsNullOrWhiteSpace(email) || 
+                string.IsNullOrWhiteSpace(password) ||
+                string.IsNullOrWhiteSpace(confirmPassword))
+            {
+                MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK);
+                return;
+            }
+
+            if(password != confirmPassword)
+            {
+                MessageBox.Show("Passwords do not match.", "Error", MessageBoxButtons.OK);
+                return;
+            }
+
+
+            //We hash the password before storing it with the help of SecurityService that we created
+            SecurityService securityService = new SecurityService();
+            string hashedPassword = securityService.HashPassword(password);
+
+            Console.WriteLine($"Email: {email}, Password: {password}, Hashed: {hashedPassword}");
+            UserService userService = new UserService();
+            bool isRegistered = userService.RegisterUser(email, hashedPassword);
+
+            if (isRegistered)
+            {
+                MessageBox.Show("Registration succeessful. You can now log in.");
+            }
+            else
+            {
+                MessageBox.Show("Registration failed. Email may already be in used.", "Error", MessageBoxButtons.OK);
+            }
+
         }
     }
 }

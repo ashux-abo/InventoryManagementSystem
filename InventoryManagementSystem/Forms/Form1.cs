@@ -26,8 +26,10 @@ namespace InventoryManagementSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             registerForm = new RegisterForm();
             registerForm.ShowDialog();
+            this.Close();
         }
     }
 }

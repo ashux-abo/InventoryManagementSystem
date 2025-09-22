@@ -73,6 +73,7 @@
             this.registerBtn.TabIndex = 15;
             this.registerBtn.Text = "REGISTER";
             this.registerBtn.UseVisualStyleBackColor = true;
+            this.registerBtn.Click += new System.EventHandler(this.registerBtn_Click);
             // 
             // loginLink
             // 

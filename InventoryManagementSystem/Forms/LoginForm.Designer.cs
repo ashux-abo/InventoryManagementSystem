@@ -46,9 +46,9 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(115)))), ((int)(((byte)(81)))));
             this.label1.Location = new System.Drawing.Point(515, 282);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 19);
+            this.label1.Size = new System.Drawing.Size(133, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Enter Your Name";
+            this.label1.Text = "Enter Your Email";
             // 
             // label2
             // 
@@ -99,6 +99,7 @@
             this.signUpLink.TabIndex = 5;
             this.signUpLink.TabStop = true;
             this.signUpLink.Text = "SIGNUP";
+            this.signUpLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.signUpLink_LinkClicked);
             // 
             // loginBtn
             // 
@@ -110,6 +111,7 @@
             this.loginBtn.TabIndex = 6;
             this.loginBtn.Text = "LOGIN";
             this.loginBtn.UseVisualStyleBackColor = true;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // label4
             // 
