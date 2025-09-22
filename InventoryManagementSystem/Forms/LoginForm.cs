@@ -51,5 +51,17 @@ namespace InventoryManagementSystem.Forms
 
             this.Close();
         }
+
+        private void passwordVisible_Click(object sender, EventArgs e)
+        {
+            if(passwordTxt.UseSystemPasswordChar)
+            {
+                passwordTxt.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                passwordTxt.UseSystemPasswordChar = true;
+            }
+        }
     }
 }

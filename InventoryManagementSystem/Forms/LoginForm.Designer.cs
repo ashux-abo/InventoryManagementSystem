@@ -37,6 +37,11 @@
             this.loginBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.passwordVisible = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -87,6 +92,7 @@
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.Size = new System.Drawing.Size(226, 26);
             this.passwordTxt.TabIndex = 4;
+            this.passwordTxt.UseSystemPasswordChar = true;
             // 
             // signUpLink
             // 
@@ -135,12 +141,45 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "QuickStock";
             // 
+            // passwordVisible
+            // 
+            this.passwordVisible.FlatAppearance.BorderSize = 0;
+            this.passwordVisible.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.passwordVisible.Image = global::InventoryManagementSystem.Properties.Resources.visibility_24dp_307351_FILL0_wght400_GRAD0_opsz24;
+            this.passwordVisible.Location = new System.Drawing.Point(751, 365);
+            this.passwordVisible.Name = "passwordVisible";
+            this.passwordVisible.Size = new System.Drawing.Size(23, 23);
+            this.passwordVisible.TabIndex = 11;
+            this.passwordVisible.UseVisualStyleBackColor = true;
+            this.passwordVisible.Click += new System.EventHandler(this.passwordVisible_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::InventoryManagementSystem.Properties.Resources.lock_24dp_307351_FILL0_wght400_GRAD0_opsz24;
+            this.pictureBox2.Location = new System.Drawing.Point(488, 363);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(26, 30);
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::InventoryManagementSystem.Properties.Resources.mail_24dp_307351_FILL0_wght400_GRAD0_opsz24;
+            this.pictureBox1.Location = new System.Drawing.Point(488, 304);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 24);
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(178)))), ((int)(((byte)(184)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.passwordVisible);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.loginBtn);
@@ -153,6 +192,8 @@
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LoginForm";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,5 +210,8 @@
         private System.Windows.Forms.Button loginBtn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button passwordVisible;
     }
 }

@@ -65,5 +65,23 @@ namespace InventoryManagementSystem.Forms
             }
 
         }
+
+        private void showPassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (showPassword.Checked)
+            {
+                createPasswordTxt.UseSystemPasswordChar = false;
+                confirmPassTxt.UseSystemPasswordChar = false;
+                createPasswordTxt.PasswordChar = '\0';
+                confirmPassTxt.PasswordChar = '\0';
+            }
+            else
+            {
+                createPasswordTxt.UseSystemPasswordChar = true;
+                confirmPassTxt.UseSystemPasswordChar = true;
+                createPasswordTxt.PasswordChar = '●';
+                confirmPassTxt.PasswordChar = '●';
+            }
+        }
     }
 }
