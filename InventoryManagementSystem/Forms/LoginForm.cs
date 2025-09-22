@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using InventoryManagementSystem.Services;
 
 namespace InventoryManagementSystem.Forms
 {
@@ -15,6 +16,40 @@ namespace InventoryManagementSystem.Forms
         public LoginForm()
         {
             InitializeComponent();
+        }
+
+        private void loginBtn_Click(object sender, EventArgs e)
+        {
+            string  email = emailTxt.Text.Trim();
+            string password = passwordTxt.Text; 
+
+            AuthService authService = new AuthService();
+            bool isAuthenticated = authService.AuthenticateUser(email, password);
+
+            if (isAuthenticated) 
+            {
+                MessageBox.Show("Login successful!");
+                this.Hide();
+
+                MainForm mainForm = new MainForm();
+                mainForm.ShowDialog();
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid email or password.", "Error", MessageBoxButtons.OK);   
+            }
+        }
+
+        private void signUpLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.ShowDialog();
+
+            this.Close();
         }
     }
 }
