@@ -284,5 +284,8 @@
   <ItemGroup>
     <Folder Include="UserControl\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Four Ways to Put Internet Profiles to Good Use.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

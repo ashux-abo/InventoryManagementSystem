@@ -42,7 +42,7 @@ namespace InventoryManagementSystem.Data_Access
                     connection.Open();
 
                     SqlDataReader reader = command.ExecuteReader();
-                    if(reader.Read())
+                    if (reader.Read())
                     {
                         user = new User
                         {
@@ -77,6 +77,30 @@ namespace InventoryManagementSystem.Data_Access
                     catch (SqlException ex)
                     {
                         //Log or handle the exception as needed
+                        Console.WriteLine("SQL Error:" + ex.Message);
+                        return false;
+                    }
+                }
+            }
+        }
+
+        public bool AddProfileImage(string email, byte[] ImageData)
+        {
+            string query = "UPDATE UserTable SET ProfileImage = @ProfileImage WHERE Email = @Email";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Email", email);
+                    command.Parameters.AddWithValue("@ImageData", ImageData);
+                    try
+                    {
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+                        return rowsAffected > 0;
+                    }
+                    catch(SqlException ex)
+                    {
                         Console.WriteLine("SQL Error:" + ex.Message);
                         return false;
                     }
