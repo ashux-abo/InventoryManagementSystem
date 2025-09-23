@@ -281,5 +281,8 @@
   <ItemGroup>
     <None Include="Resources\lock_open_right_24dp_307351_FILL0_wght400_GRAD0_opsz24.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UserControl\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
