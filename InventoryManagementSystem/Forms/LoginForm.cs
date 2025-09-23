@@ -31,7 +31,9 @@ namespace InventoryManagementSystem.Forms
                 MessageBox.Show("Login successful!");
                 this.Hide();
 
-                MainForm mainForm = new MainForm(email);
+                string userEmail = emailTxt.Text;
+
+                MainForm mainForm = new MainForm(userEmail);
                 mainForm.ShowDialog();
 
                 this.Close();

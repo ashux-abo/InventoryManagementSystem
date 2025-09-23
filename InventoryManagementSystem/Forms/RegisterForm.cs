@@ -83,5 +83,10 @@ namespace InventoryManagementSystem.Forms
                 confirmPassTxt.PasswordChar = '●';
             }
         }
+
+        private void RegisterForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

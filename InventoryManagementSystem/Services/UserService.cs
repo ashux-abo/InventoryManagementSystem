@@ -34,6 +34,13 @@ namespace InventoryManagementSystem.Services
             return userRepository.AddUser(newUser);
         }
 
-       
+        public byte[] ImageToByte(System.Drawing.Image image)
+        {
+            using (var ms = new System.IO.MemoryStream())
+            {
+                image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                return ms.ToArray();
+            }
+        }
     }
 }
