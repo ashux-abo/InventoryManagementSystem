@@ -20,7 +20,7 @@ namespace InventoryManagementSystem.Forms
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            string  email = emailTxt.Text.Trim();
+            string email = emailTxt.Text.Trim();
             string password = passwordTxt.Text; 
 
             AuthService authService = new AuthService();
@@ -31,7 +31,7 @@ namespace InventoryManagementSystem.Forms
                 MessageBox.Show("Login successful!");
                 this.Hide();
 
-                MainForm mainForm = new MainForm();
+                MainForm mainForm = new MainForm(email);
                 mainForm.ShowDialog();
 
                 this.Close();
@@ -62,6 +62,11 @@ namespace InventoryManagementSystem.Forms
             {
                 passwordTxt.UseSystemPasswordChar = true;
             }
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

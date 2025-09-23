@@ -63,6 +63,16 @@ namespace InventoryManagementSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Four_Ways_to_Put_Internet_Profiles_to_Good_Use {
+            get {
+                object obj = ResourceManager.GetObject("Four Ways to Put Internet Profiles to Good Use", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lock_24dp_307351_FILL0_wght400_GRAD0_opsz24 {
             get {
                 object obj = ResourceManager.GetObject("lock_24dp_307351_FILL0_wght400_GRAD0_opsz24", resourceCulture);

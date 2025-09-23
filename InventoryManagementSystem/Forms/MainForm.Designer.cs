@@ -38,10 +38,16 @@
             this.reportsBtn = new System.Windows.Forms.Button();
             this.dashboardHeader = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.displayEmail = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             mainPanel = new System.Windows.Forms.Panel();
             topPanel = new System.Windows.Forms.Panel();
             this.sideBar.SuspendLayout();
             mainPanel.SuspendLayout();
+            topPanel.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // sideBar
@@ -70,6 +76,7 @@
             // topPanel
             // 
             topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(178)))), ((int)(((byte)(184)))));
+            topPanel.Controls.Add(this.flowLayoutPanel1);
             topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             topPanel.Location = new System.Drawing.Point(159, 0);
             topPanel.Name = "topPanel";
@@ -82,7 +89,7 @@
             this.dashboardBtn.FlatAppearance.BorderSize = 0;
             this.dashboardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dashboardBtn.Font = new System.Drawing.Font("Rockwell", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dashboardBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(3)))), ((int)(((byte)(9)))));
+            this.dashboardBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(15)))), ((int)(((byte)(21)))));
             this.dashboardBtn.Location = new System.Drawing.Point(8, 161);
             this.dashboardBtn.Name = "dashboardBtn";
             this.dashboardBtn.Size = new System.Drawing.Size(142, 43);
@@ -96,7 +103,7 @@
             this.productsBtn.FlatAppearance.BorderSize = 0;
             this.productsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.productsBtn.Font = new System.Drawing.Font("Rockwell", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.productsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(3)))), ((int)(((byte)(9)))));
+            this.productsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(15)))), ((int)(((byte)(21)))));
             this.productsBtn.Location = new System.Drawing.Point(8, 214);
             this.productsBtn.Name = "productsBtn";
             this.productsBtn.Size = new System.Drawing.Size(142, 43);
@@ -110,7 +117,7 @@
             this.supplierBtn.FlatAppearance.BorderSize = 0;
             this.supplierBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.supplierBtn.Font = new System.Drawing.Font("Rockwell", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supplierBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(3)))), ((int)(((byte)(9)))));
+            this.supplierBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(15)))), ((int)(((byte)(21)))));
             this.supplierBtn.Location = new System.Drawing.Point(8, 267);
             this.supplierBtn.Name = "supplierBtn";
             this.supplierBtn.Size = new System.Drawing.Size(142, 43);
@@ -124,7 +131,7 @@
             this.transactionsBtn.FlatAppearance.BorderSize = 0;
             this.transactionsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.transactionsBtn.Font = new System.Drawing.Font("Rockwell", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transactionsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(3)))), ((int)(((byte)(9)))));
+            this.transactionsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(15)))), ((int)(((byte)(21)))));
             this.transactionsBtn.Location = new System.Drawing.Point(8, 320);
             this.transactionsBtn.Name = "transactionsBtn";
             this.transactionsBtn.Size = new System.Drawing.Size(142, 43);
@@ -138,7 +145,7 @@
             this.reportsBtn.FlatAppearance.BorderSize = 0;
             this.reportsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reportsBtn.Font = new System.Drawing.Font("Rockwell", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(3)))), ((int)(((byte)(9)))));
+            this.reportsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(15)))), ((int)(((byte)(21)))));
             this.reportsBtn.Location = new System.Drawing.Point(8, 373);
             this.reportsBtn.Name = "reportsBtn";
             this.reportsBtn.Size = new System.Drawing.Size(142, 43);
@@ -167,6 +174,43 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Track products, Manage stocks, and Monitor transactions";
             // 
+            // displayEmail
+            // 
+            this.displayEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.displayEmail.AutoSize = true;
+            this.displayEmail.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.displayEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(15)))), ((int)(((byte)(21)))));
+            this.displayEmail.Location = new System.Drawing.Point(46, 16);
+            this.displayEmail.Name = "displayEmail";
+            this.displayEmail.Size = new System.Drawing.Size(47, 15);
+            this.displayEmail.TabIndex = 0;
+            this.displayEmail.Text = "label1";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
+            this.flowLayoutPanel1.Controls.Add(this.displayEmail);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(846, 2);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(153, 48);
+            this.flowLayoutPanel1.TabIndex = 1;
+            this.flowLayoutPanel1.WrapContents = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::InventoryManagementSystem.Properties.Resources.Four_Ways_to_Put_Internet_Profiles_to_Good_Use;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,9 +222,15 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.sideBar.ResumeLayout(false);
             mainPanel.ResumeLayout(false);
             mainPanel.PerformLayout();
+            topPanel.ResumeLayout(false);
+            topPanel.PerformLayout();
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -195,5 +245,8 @@
         private System.Windows.Forms.Button dashboardBtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label dashboardHeader;
+        private System.Windows.Forms.Label displayEmail;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -12,9 +12,21 @@ namespace InventoryManagementSystem.Forms
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        private string email;
+        public MainForm(string email)
         {
             InitializeComponent();
+            this.email = email;
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            displayEmail.Text = email;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
