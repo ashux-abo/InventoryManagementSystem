@@ -16,5 +16,24 @@ namespace InventoryManagementSystem.UserControl
         {
             InitializeComponent();
         }
+
+        private void ProductsPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public delegate void NavigateEventHandler(object sender, EventArgs e);
+        public event NavigateEventHandler NavigateToSupplierPage;
+
+        protected virtual void OnNavigateToSupplierPage(EventArgs e)
+        {
+            NavigateToSupplierPage?.Invoke(this, e);
+        }
+
+        private void btnSupplier_Click(object sender, EventArgs e)
+        {
+            OnNavigateToSupplierPage(EventArgs.Empty);
+
+        }
     }
 }

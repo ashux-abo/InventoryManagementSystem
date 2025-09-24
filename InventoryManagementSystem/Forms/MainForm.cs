@@ -11,10 +11,12 @@ using System.Windows.Forms;
 using InventoryManagementSystem.Data_Access;
 using InventoryManagementSystem.Models;
 using InventoryManagementSystem.Services;
+using InventoryManagementSystem.UserControl;
+
 
 namespace InventoryManagementSystem.Forms
 {
-    public partial class MainForm : Form
+    public partial class MainForm : System.Windows.Forms.UserControl
     {
         private string email;
         private readonly UserRepository userRepository;
@@ -67,6 +69,7 @@ namespace InventoryManagementSystem.Forms
         {
             panel2.Controls.Clear();
 
+            userControl.Dock = DockStyle.Fill;
             panel2.Controls.Add(userControl);
         }
         private void productsBtn_Click(object sender, EventArgs e)
@@ -74,6 +77,23 @@ namespace InventoryManagementSystem.Forms
             
         }
 
-       
+        private void supplierBtn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void OnUserControlNavigate(object sender, string viewName)
+        {
+            switch (viewName) 
+            {
+                case "ProductsPage":
+            
+                    break;
+
+                case "SupplierPage":
+                
+                    break;
+            }   
+        }
     }
 }

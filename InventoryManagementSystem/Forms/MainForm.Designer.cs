@@ -31,6 +31,7 @@
             System.Windows.Forms.Panel topPanel;
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.displayEmail = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sideBar = new System.Windows.Forms.Panel();
             this.reportsBtn = new System.Windows.Forms.Button();
             this.transactionsBtn = new System.Windows.Forms.Button();
@@ -38,15 +39,14 @@
             this.productsBtn = new System.Windows.Forms.Button();
             this.dashboardBtn = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.transactionHeader = new System.Windows.Forms.Label();
             this.dashboardHeader = new System.Windows.Forms.Label();
+            this.transactionHeader = new System.Windows.Forms.Label();
             topPanel = new System.Windows.Forms.Panel();
             topPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.sideBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.sideBar.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +84,19 @@
             this.displayEmail.Size = new System.Drawing.Size(47, 15);
             this.displayEmail.TabIndex = 0;
             this.displayEmail.Text = "label1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::InventoryManagementSystem.Properties.Resources.Four_Ways_to_Put_Internet_Profiles_to_Good_Use;
+            this.pictureBox1.Location = new System.Drawing.Point(61, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // sideBar
             // 
@@ -140,6 +153,7 @@
             this.supplierBtn.TabIndex = 2;
             this.supplierBtn.Text = "Supplier";
             this.supplierBtn.UseVisualStyleBackColor = false;
+            this.supplierBtn.Click += new System.EventHandler(this.supplierBtn_Click);
             // 
             // productsBtn
             // 
@@ -174,19 +188,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::InventoryManagementSystem.Properties.Resources.Four_Ways_to_Put_Internet_Profiles_to_Good_Use;
-            this.pictureBox1.Location = new System.Drawing.Point(61, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(178)))), ((int)(((byte)(184)))));
@@ -197,16 +198,6 @@
             this.panel2.Size = new System.Drawing.Size(1099, 625);
             this.panel2.TabIndex = 3;
             // 
-            // transactionHeader
-            // 
-            this.transactionHeader.AutoSize = true;
-            this.transactionHeader.Font = new System.Drawing.Font("Felix Titling", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transactionHeader.Location = new System.Drawing.Point(430, 295);
-            this.transactionHeader.Name = "transactionHeader";
-            this.transactionHeader.Size = new System.Drawing.Size(239, 34);
-            this.transactionHeader.TabIndex = 2;
-            this.transactionHeader.Text = "TRANSACTION";
-            // 
             // dashboardHeader
             // 
             this.dashboardHeader.AutoSize = true;
@@ -216,6 +207,16 @@
             this.dashboardHeader.Size = new System.Drawing.Size(202, 34);
             this.dashboardHeader.TabIndex = 3;
             this.dashboardHeader.Text = "DASHBOARD";
+            // 
+            // transactionHeader
+            // 
+            this.transactionHeader.AutoSize = true;
+            this.transactionHeader.Font = new System.Drawing.Font("Felix Titling", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transactionHeader.Location = new System.Drawing.Point(430, 295);
+            this.transactionHeader.Name = "transactionHeader";
+            this.transactionHeader.Size = new System.Drawing.Size(239, 34);
+            this.transactionHeader.TabIndex = 2;
+            this.transactionHeader.Text = "TRANSACTION";
             // 
             // MainForm
             // 
@@ -233,8 +234,8 @@
             topPanel.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
-            this.sideBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.sideBar.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
