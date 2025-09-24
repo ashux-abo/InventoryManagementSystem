@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Configuration;
 using System.Windows.Forms;
 using InventoryManagementSystem.Data_Access;
 using InventoryManagementSystem.Models;
@@ -61,5 +62,18 @@ namespace InventoryManagementSystem.Forms
                 }
             }
         }
+
+        private void LoadUserControl(System.Windows.Forms.UserControl userControl)
+        {
+            panel2.Controls.Clear();
+
+            panel2.Controls.Add(userControl);
+        }
+        private void productsBtn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+       
     }
 }
