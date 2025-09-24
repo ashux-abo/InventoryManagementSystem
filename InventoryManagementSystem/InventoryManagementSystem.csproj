@@ -216,7 +216,7 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\MainForm.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -233,6 +233,30 @@
     <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\SecurityService.cs" />
     <Compile Include="Services\UserService.cs" />
+    <Compile Include="UserControl\ProductsPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControl\ProductsPage.Designer.cs">
+      <DependentUpon>ProductsPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ReportPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControl\ReportPage.Designer.cs">
+      <DependentUpon>ReportPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\SupplierPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControl\SupplierPage.Designer.cs">
+      <DependentUpon>SupplierPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\TransactionPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControl\TransactionPage.Designer.cs">
+      <DependentUpon>TransactionPage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -255,6 +279,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControl\ProductsPage.resx">
+      <DependentUpon>ProductsPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\ReportPage.resx">
+      <DependentUpon>ReportPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\SupplierPage.resx">
+      <DependentUpon>SupplierPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\TransactionPage.resx">
+      <DependentUpon>TransactionPage.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -281,9 +317,7 @@
   <ItemGroup>
     <None Include="Resources\lock_open_right_24dp_307351_FILL0_wght400_GRAD0_opsz24.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="UserControl\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Four Ways to Put Internet Profiles to Good Use.jpg" />
   </ItemGroup>

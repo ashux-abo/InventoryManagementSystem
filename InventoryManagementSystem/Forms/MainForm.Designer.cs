@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Panel mainPanel;
             System.Windows.Forms.Panel topPanel;
-            this.label2 = new System.Windows.Forms.Label();
-            this.dashboardHeader = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.displayEmail = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sideBar = new System.Windows.Forms.Panel();
             this.reportsBtn = new System.Windows.Forms.Button();
             this.transactionsBtn = new System.Windows.Forms.Button();
@@ -42,44 +39,16 @@
             this.productsBtn = new System.Windows.Forms.Button();
             this.dashboardBtn = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            mainPanel = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dashboardHeader = new System.Windows.Forms.Label();
+            this.transactionHeader = new System.Windows.Forms.Label();
             topPanel = new System.Windows.Forms.Panel();
-            mainPanel.SuspendLayout();
             topPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.sideBar.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // mainPanel
-            // 
-            mainPanel.Controls.Add(this.label2);
-            mainPanel.Controls.Add(this.dashboardHeader);
-            mainPanel.Location = new System.Drawing.Point(165, 56);
-            mainPanel.Name = "mainPanel";
-            mainPanel.Size = new System.Drawing.Size(1099, 625);
-            mainPanel.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(31, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(558, 23);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Track products, Manage stocks, and Monitor transactions";
-            // 
-            // dashboardHeader
-            // 
-            this.dashboardHeader.AutoSize = true;
-            this.dashboardHeader.Font = new System.Drawing.Font("Felix Titling", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dashboardHeader.Location = new System.Drawing.Point(29, 34);
-            this.dashboardHeader.Name = "dashboardHeader";
-            this.dashboardHeader.Size = new System.Drawing.Size(211, 34);
-            this.dashboardHeader.TabIndex = 0;
-            this.dashboardHeader.Text = "DASHBOARD";
             // 
             // topPanel
             // 
@@ -104,6 +73,18 @@
             this.flowLayoutPanel1.TabIndex = 1;
             this.flowLayoutPanel1.WrapContents = false;
             // 
+            // displayEmail
+            // 
+            this.displayEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.displayEmail.AutoSize = true;
+            this.displayEmail.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.displayEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(15)))), ((int)(((byte)(21)))));
+            this.displayEmail.Location = new System.Drawing.Point(8, 16);
+            this.displayEmail.Name = "displayEmail";
+            this.displayEmail.Size = new System.Drawing.Size(47, 15);
+            this.displayEmail.TabIndex = 0;
+            this.displayEmail.Text = "label1";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -116,18 +97,6 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // displayEmail
-            // 
-            this.displayEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.displayEmail.AutoSize = true;
-            this.displayEmail.Font = new System.Drawing.Font("Rockwell", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.displayEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(15)))), ((int)(((byte)(21)))));
-            this.displayEmail.Location = new System.Drawing.Point(8, 16);
-            this.displayEmail.Name = "displayEmail";
-            this.displayEmail.Size = new System.Drawing.Size(47, 15);
-            this.displayEmail.TabIndex = 0;
-            this.displayEmail.Text = "label1";
             // 
             // sideBar
             // 
@@ -184,6 +153,7 @@
             this.supplierBtn.TabIndex = 2;
             this.supplierBtn.Text = "Supplier";
             this.supplierBtn.UseVisualStyleBackColor = false;
+            this.supplierBtn.Click += new System.EventHandler(this.supplierBtn_Click);
             // 
             // productsBtn
             // 
@@ -198,6 +168,7 @@
             this.productsBtn.TabIndex = 1;
             this.productsBtn.Text = "Products";
             this.productsBtn.UseVisualStyleBackColor = false;
+            this.productsBtn.Click += new System.EventHandler(this.productsBtn_Click);
             // 
             // dashboardBtn
             // 
@@ -217,26 +188,56 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(178)))), ((int)(((byte)(184)))));
+            this.panel2.Controls.Add(this.dashboardHeader);
+            this.panel2.Controls.Add(this.transactionHeader);
+            this.panel2.Location = new System.Drawing.Point(165, 56);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1099, 625);
+            this.panel2.TabIndex = 3;
+            // 
+            // dashboardHeader
+            // 
+            this.dashboardHeader.AutoSize = true;
+            this.dashboardHeader.Font = new System.Drawing.Font("Felix Titling", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashboardHeader.Location = new System.Drawing.Point(32, 29);
+            this.dashboardHeader.Name = "dashboardHeader";
+            this.dashboardHeader.Size = new System.Drawing.Size(202, 34);
+            this.dashboardHeader.TabIndex = 3;
+            this.dashboardHeader.Text = "DASHBOARD";
+            // 
+            // transactionHeader
+            // 
+            this.transactionHeader.AutoSize = true;
+            this.transactionHeader.Font = new System.Drawing.Font("Felix Titling", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transactionHeader.Location = new System.Drawing.Point(430, 295);
+            this.transactionHeader.Name = "transactionHeader";
+            this.transactionHeader.Size = new System.Drawing.Size(239, 34);
+            this.transactionHeader.TabIndex = 2;
+            this.transactionHeader.Text = "TRANSACTION";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(topPanel);
-            this.Controls.Add(mainPanel);
             this.Controls.Add(this.sideBar);
+            this.Controls.Add(this.panel2);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            mainPanel.ResumeLayout(false);
-            mainPanel.PerformLayout();
             topPanel.ResumeLayout(false);
             topPanel.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.sideBar.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -249,11 +250,12 @@
         private System.Windows.Forms.Button supplierBtn;
         private System.Windows.Forms.Button productsBtn;
         private System.Windows.Forms.Button dashboardBtn;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label dashboardHeader;
         private System.Windows.Forms.Label displayEmail;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label dashboardHeader;
+        private System.Windows.Forms.Label transactionHeader;
     }
 }
