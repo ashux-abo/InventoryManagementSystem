@@ -17,6 +17,7 @@ namespace InventoryManagementSystem.Forms
         public RegisterForm()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
         private void loginLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

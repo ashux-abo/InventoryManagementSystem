@@ -16,6 +16,7 @@ namespace InventoryManagementSystem.Forms
         public LoginForm()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
         }
 
         private void loginBtn_Click(object sender, EventArgs e)
@@ -34,7 +35,7 @@ namespace InventoryManagementSystem.Forms
                 string userEmail = emailTxt.Text;
 
                 MainForm mainForm = new MainForm(userEmail);
-                mainForm.ShowDialog();
+                mainForm.Show();
 
                 this.Close();
             }

@@ -1,4 +1,6 @@
-﻿namespace InventoryManagementSystem.Forms
+﻿using System.Windows.Forms;
+
+namespace InventoryManagementSystem.Forms
 {
     partial class MainForm
     {
@@ -222,18 +224,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(topPanel);
             this.Controls.Add(this.sideBar);
             this.Controls.Add(this.panel2);
             this.Name = "MainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MainForm";
+            this.Size = new System.Drawing.Size(1264, 681);
             this.Load += new System.EventHandler(this.MainForm_Load);
             topPanel.ResumeLayout(false);
             topPanel.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            this.StartingPoint = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.sideBar.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -257,5 +258,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label dashboardHeader;
         private System.Windows.Forms.Label transactionHeader;
+
+        public FormStartPosition StartingPoint { get; private set; }
     }
 }
