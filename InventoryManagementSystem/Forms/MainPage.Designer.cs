@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.Panel topPanel;
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.dashboardHeader = new System.Windows.Forms.Label();
-            this.transactionHeader = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.displayEmail = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dashboardHeader = new System.Windows.Forms.Label();
+            this.transactionHeader = new System.Windows.Forms.Label();
             this.productsBtn = new System.Windows.Forms.Button();
             this.dashboardBtn = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -43,42 +43,22 @@
             this.supplierBtn = new System.Windows.Forms.Button();
             this.sideBar = new System.Windows.Forms.Panel();
             topPanel = new System.Windows.Forms.Panel();
-            this.panel2.SuspendLayout();
+            topPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            topPanel.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.sideBar.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel2
+            // topPanel
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(178)))), ((int)(((byte)(184)))));
-            this.panel2.Controls.Add(this.dashboardHeader);
-            this.panel2.Controls.Add(this.transactionHeader);
-            this.panel2.Location = new System.Drawing.Point(168, 56);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1088, 606);
-            this.panel2.TabIndex = 6;
-            // 
-            // dashboardHeader
-            // 
-            this.dashboardHeader.AutoSize = true;
-            this.dashboardHeader.Font = new System.Drawing.Font("Felix Titling", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dashboardHeader.Location = new System.Drawing.Point(32, 29);
-            this.dashboardHeader.Name = "dashboardHeader";
-            this.dashboardHeader.Size = new System.Drawing.Size(202, 34);
-            this.dashboardHeader.TabIndex = 3;
-            this.dashboardHeader.Text = "DASHBOARD";
-            // 
-            // transactionHeader
-            // 
-            this.transactionHeader.AutoSize = true;
-            this.transactionHeader.Font = new System.Drawing.Font("Felix Titling", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transactionHeader.Location = new System.Drawing.Point(430, 295);
-            this.transactionHeader.Name = "transactionHeader";
-            this.transactionHeader.Size = new System.Drawing.Size(239, 34);
-            this.transactionHeader.TabIndex = 2;
-            this.transactionHeader.Text = "TRANSACTION";
+            topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(178)))), ((int)(((byte)(184)))));
+            topPanel.Controls.Add(this.flowLayoutPanel1);
+            topPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            topPanel.Location = new System.Drawing.Point(159, 0);
+            topPanel.Name = "topPanel";
+            topPanel.Size = new System.Drawing.Size(1089, 50);
+            topPanel.TabIndex = 5;
             // 
             // flowLayoutPanel1
             // 
@@ -117,6 +97,36 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(178)))), ((int)(((byte)(184)))));
+            this.panel2.Controls.Add(this.dashboardHeader);
+            this.panel2.Controls.Add(this.transactionHeader);
+            this.panel2.Location = new System.Drawing.Point(168, 56);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1088, 606);
+            this.panel2.TabIndex = 6;
+            // 
+            // dashboardHeader
+            // 
+            this.dashboardHeader.AutoSize = true;
+            this.dashboardHeader.Font = new System.Drawing.Font("Felix Titling", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashboardHeader.Location = new System.Drawing.Point(32, 29);
+            this.dashboardHeader.Name = "dashboardHeader";
+            this.dashboardHeader.Size = new System.Drawing.Size(202, 34);
+            this.dashboardHeader.TabIndex = 3;
+            this.dashboardHeader.Text = "DASHBOARD";
+            // 
+            // transactionHeader
+            // 
+            this.transactionHeader.AutoSize = true;
+            this.transactionHeader.Font = new System.Drawing.Font("Felix Titling", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transactionHeader.Location = new System.Drawing.Point(430, 295);
+            this.transactionHeader.Name = "transactionHeader";
+            this.transactionHeader.Size = new System.Drawing.Size(239, 34);
+            this.transactionHeader.TabIndex = 2;
+            this.transactionHeader.Text = "TRANSACTION";
+            // 
             // productsBtn
             // 
             this.productsBtn.BackColor = System.Drawing.Color.Transparent;
@@ -130,6 +140,7 @@
             this.productsBtn.TabIndex = 1;
             this.productsBtn.Text = "Products";
             this.productsBtn.UseVisualStyleBackColor = false;
+            this.productsBtn.Click += new System.EventHandler(this.productsBtn_Click);
             // 
             // dashboardBtn
             // 
@@ -144,6 +155,7 @@
             this.dashboardBtn.TabIndex = 0;
             this.dashboardBtn.Text = "Dashboard";
             this.dashboardBtn.UseVisualStyleBackColor = false;
+            this.dashboardBtn.Click += new System.EventHandler(this.dashboardBtn_Click);
             // 
             // openFileDialog1
             // 
@@ -162,6 +174,7 @@
             this.reportsBtn.TabIndex = 4;
             this.reportsBtn.Text = "Report";
             this.reportsBtn.UseVisualStyleBackColor = false;
+            this.reportsBtn.Click += new System.EventHandler(this.reportsBtn_Click);
             // 
             // transactionsBtn
             // 
@@ -176,6 +189,7 @@
             this.transactionsBtn.TabIndex = 3;
             this.transactionsBtn.Text = "Transactions";
             this.transactionsBtn.UseVisualStyleBackColor = false;
+            this.transactionsBtn.Click += new System.EventHandler(this.transactionsBtn_Click);
             // 
             // supplierBtn
             // 
@@ -190,16 +204,7 @@
             this.supplierBtn.TabIndex = 2;
             this.supplierBtn.Text = "Supplier";
             this.supplierBtn.UseVisualStyleBackColor = false;
-            // 
-            // topPanel
-            // 
-            topPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(178)))), ((int)(((byte)(184)))));
-            topPanel.Controls.Add(this.flowLayoutPanel1);
-            topPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            topPanel.Location = new System.Drawing.Point(159, 0);
-            topPanel.Name = "topPanel";
-            topPanel.Size = new System.Drawing.Size(1089, 50);
-            topPanel.TabIndex = 5;
+            this.supplierBtn.Click += new System.EventHandler(this.supplierBtn_Click);
             // 
             // sideBar
             // 
@@ -226,13 +231,13 @@
             this.Name = "MainPage";
             this.Text = "MainPage";
             this.Load += new System.EventHandler(this.MainPage_Load);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            topPanel.ResumeLayout(false);
+            topPanel.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            topPanel.ResumeLayout(false);
-            topPanel.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.sideBar.ResumeLayout(false);
             this.ResumeLayout(false);
 

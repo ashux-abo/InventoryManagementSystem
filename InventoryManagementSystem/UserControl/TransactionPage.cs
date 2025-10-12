@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace InventoryManagementSystem.UserControl
 {
-    public partial class TransactionPage : Form
+    public partial class TransactionPage : System.Windows.Forms.UserControl
     {
         public TransactionPage()
         {
