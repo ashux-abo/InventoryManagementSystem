@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -92,20 +93,49 @@ namespace InventoryManagementSystem.Data_Access
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Email", email);
-                    command.Parameters.AddWithValue("@ImageData", ImageData);
+                    command.Parameters.Add("@ProfileImage", SqlDbType.VarBinary, -1).Value = ImageData;
                     try
                     {
                         connection.Open();
                         int rowsAffected = command.ExecuteNonQuery();
                         return rowsAffected > 0;
                     }
-                    catch(SqlException ex)
+                    catch (SqlException ex)
                     {
                         Console.WriteLine("SQL Error:" + ex.Message);
                         return false;
                     }
                 }
             }
+        }
+
+        public byte[] GetProfileImage(string email)
+        {
+            string query = "Select ProfileImage from UserTable where Email = @Email";
+            byte[] photoData = null;
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Email", email);
+                    try
+                    {
+                        connection.Open();
+                        object result = command.ExecuteScalar();
+                        if (result != null && result != DBNull.Value)
+                        {
+                            photoData = (byte[])result;
+                        }   
+                    }
+                    catch (SqlException ex)
+                    {
+                        Console.WriteLine("SQL Error:" + ex.Message);
+                        return null;
+                    }
+                }
+            }
+            return photoData;
         }
     }
 }

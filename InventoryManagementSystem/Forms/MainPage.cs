@@ -33,7 +33,22 @@ namespace InventoryManagementSystem.Forms
         private void MainPage_Load(object sender, EventArgs e)
         {
             displayEmail.Text = email;
-           
+
+            // Load and display profile image
+            byte[] photoData = userRepository.GetProfileImage(email);
+            if (photoData != null)
+            {
+                try
+                {
+                    // Convert bytes to image and display it
+                    pictureBox1.Image = userService.ByteToImage(photoData);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error loading saved profile image: " + ex.Message);
+                }
+            }
+
         }
 
         private void LoadUserControl(System.Windows.Forms.UserControl userControl)
@@ -41,6 +56,8 @@ namespace InventoryManagementSystem.Forms
             panel2.Controls.Clear();
             userControl.Dock = DockStyle.Fill;
             panel2.Controls.Add(userControl);
+
+            
         }
 
         //handles button clicks to load respective user controls
@@ -67,6 +84,35 @@ namespace InventoryManagementSystem.Forms
         private void dashboardBtn_Click(object sender, EventArgs e)
         {
             LoadUserControl(new DashboardControl());
+        }
+
+        // Event handler for clicking the profile picture
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
+            openFileDialog1.Title = "Select a Profile Picture";
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    string image = openFileDialog1.FileName;
+                    pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+                    byte[] photoData = userService.ImageToByte(pictureBox1.Image);
+                    bool isSaved = userRepository.AddProfileImage(this.email, photoData);
+                    if (isSaved)
+                    {
+                        MessageBox.Show("Profile picture updated successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to update profile picture.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
         }
     }
 }
