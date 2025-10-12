@@ -34,9 +34,8 @@ namespace InventoryManagementSystem.Forms
 
                 string userEmail = emailTxt.Text;
 
-                MainForm mainForm = new MainForm(userEmail);
-                mainForm.Show();
-
+                MainPage mainPage = new MainPage(userEmail);
+                mainPage.ShowDialog();
                 this.Close();
             }
             else
