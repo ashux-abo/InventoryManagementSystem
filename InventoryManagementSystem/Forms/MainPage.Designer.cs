@@ -1,8 +1,6 @@
-﻿using System.Windows.Forms;
-
-namespace InventoryManagementSystem.Forms
+﻿namespace InventoryManagementSystem.Forms
 {
-    partial class MainForm
+    partial class MainPage
     {
         /// <summary>
         /// Required designer variable.
@@ -34,22 +32,22 @@ namespace InventoryManagementSystem.Forms
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.displayEmail = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.sideBar = new System.Windows.Forms.Panel();
-            this.reportsBtn = new System.Windows.Forms.Button();
-            this.transactionsBtn = new System.Windows.Forms.Button();
-            this.supplierBtn = new System.Windows.Forms.Button();
-            this.productsBtn = new System.Windows.Forms.Button();
-            this.dashboardBtn = new System.Windows.Forms.Button();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dashboardHeader = new System.Windows.Forms.Label();
             this.transactionHeader = new System.Windows.Forms.Label();
+            this.productsBtn = new System.Windows.Forms.Button();
+            this.dashboardBtn = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.reportsBtn = new System.Windows.Forms.Button();
+            this.transactionsBtn = new System.Windows.Forms.Button();
+            this.supplierBtn = new System.Windows.Forms.Button();
+            this.sideBar = new System.Windows.Forms.Panel();
             topPanel = new System.Windows.Forms.Panel();
             topPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.sideBar.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.sideBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // topPanel
@@ -59,8 +57,8 @@ namespace InventoryManagementSystem.Forms
             topPanel.Dock = System.Windows.Forms.DockStyle.Top;
             topPanel.Location = new System.Drawing.Point(159, 0);
             topPanel.Name = "topPanel";
-            topPanel.Size = new System.Drawing.Size(1105, 50);
-            topPanel.TabIndex = 1;
+            topPanel.Size = new System.Drawing.Size(1089, 50);
+            topPanel.TabIndex = 5;
             // 
             // flowLayoutPanel1
             // 
@@ -71,7 +69,7 @@ namespace InventoryManagementSystem.Forms
             this.flowLayoutPanel1.Location = new System.Drawing.Point(846, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(5);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(153, 48);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(137, 48);
             this.flowLayoutPanel1.TabIndex = 1;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -98,64 +96,36 @@ namespace InventoryManagementSystem.Forms
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // sideBar
+            // panel2
             // 
-            this.sideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(178)))), ((int)(((byte)(184)))));
-            this.sideBar.Controls.Add(this.reportsBtn);
-            this.sideBar.Controls.Add(this.transactionsBtn);
-            this.sideBar.Controls.Add(this.supplierBtn);
-            this.sideBar.Controls.Add(this.productsBtn);
-            this.sideBar.Controls.Add(this.dashboardBtn);
-            this.sideBar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sideBar.Location = new System.Drawing.Point(0, 0);
-            this.sideBar.Name = "sideBar";
-            this.sideBar.Size = new System.Drawing.Size(159, 681);
-            this.sideBar.TabIndex = 0;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(178)))), ((int)(((byte)(184)))));
+            this.panel2.Controls.Add(this.dashboardHeader);
+            this.panel2.Controls.Add(this.transactionHeader);
+            this.panel2.Location = new System.Drawing.Point(168, 56);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1088, 606);
+            this.panel2.TabIndex = 6;
             // 
-            // reportsBtn
+            // dashboardHeader
             // 
-            this.reportsBtn.BackColor = System.Drawing.Color.Transparent;
-            this.reportsBtn.FlatAppearance.BorderSize = 0;
-            this.reportsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reportsBtn.Font = new System.Drawing.Font("Rockwell", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(15)))), ((int)(((byte)(21)))));
-            this.reportsBtn.Location = new System.Drawing.Point(8, 373);
-            this.reportsBtn.Name = "reportsBtn";
-            this.reportsBtn.Size = new System.Drawing.Size(142, 43);
-            this.reportsBtn.TabIndex = 4;
-            this.reportsBtn.Text = "Report";
-            this.reportsBtn.UseVisualStyleBackColor = false;
+            this.dashboardHeader.AutoSize = true;
+            this.dashboardHeader.Font = new System.Drawing.Font("Felix Titling", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashboardHeader.Location = new System.Drawing.Point(32, 29);
+            this.dashboardHeader.Name = "dashboardHeader";
+            this.dashboardHeader.Size = new System.Drawing.Size(202, 34);
+            this.dashboardHeader.TabIndex = 3;
+            this.dashboardHeader.Text = "DASHBOARD";
             // 
-            // transactionsBtn
+            // transactionHeader
             // 
-            this.transactionsBtn.BackColor = System.Drawing.Color.Transparent;
-            this.transactionsBtn.FlatAppearance.BorderSize = 0;
-            this.transactionsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.transactionsBtn.Font = new System.Drawing.Font("Rockwell", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transactionsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(15)))), ((int)(((byte)(21)))));
-            this.transactionsBtn.Location = new System.Drawing.Point(8, 320);
-            this.transactionsBtn.Name = "transactionsBtn";
-            this.transactionsBtn.Size = new System.Drawing.Size(142, 43);
-            this.transactionsBtn.TabIndex = 3;
-            this.transactionsBtn.Text = "Transactions";
-            this.transactionsBtn.UseVisualStyleBackColor = false;
-            // 
-            // supplierBtn
-            // 
-            this.supplierBtn.BackColor = System.Drawing.Color.Transparent;
-            this.supplierBtn.FlatAppearance.BorderSize = 0;
-            this.supplierBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.supplierBtn.Font = new System.Drawing.Font("Rockwell", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.supplierBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(15)))), ((int)(((byte)(21)))));
-            this.supplierBtn.Location = new System.Drawing.Point(8, 267);
-            this.supplierBtn.Name = "supplierBtn";
-            this.supplierBtn.Size = new System.Drawing.Size(142, 43);
-            this.supplierBtn.TabIndex = 2;
-            this.supplierBtn.Text = "Supplier";
-            this.supplierBtn.UseVisualStyleBackColor = false;
-            this.supplierBtn.Click += new System.EventHandler(this.supplierBtn_Click);
+            this.transactionHeader.AutoSize = true;
+            this.transactionHeader.Font = new System.Drawing.Font("Felix Titling", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transactionHeader.Location = new System.Drawing.Point(430, 295);
+            this.transactionHeader.Name = "transactionHeader";
+            this.transactionHeader.Size = new System.Drawing.Size(239, 34);
+            this.transactionHeader.TabIndex = 2;
+            this.transactionHeader.Text = "TRANSACTION";
             // 
             // productsBtn
             // 
@@ -185,79 +155,108 @@ namespace InventoryManagementSystem.Forms
             this.dashboardBtn.TabIndex = 0;
             this.dashboardBtn.Text = "Dashboard";
             this.dashboardBtn.UseVisualStyleBackColor = false;
+            this.dashboardBtn.Click += new System.EventHandler(this.dashboardBtn_Click);
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // panel2
+            // reportsBtn
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(178)))), ((int)(((byte)(184)))));
-            this.panel2.Controls.Add(this.dashboardHeader);
-            this.panel2.Controls.Add(this.transactionHeader);
-            this.panel2.Location = new System.Drawing.Point(165, 56);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1099, 625);
-            this.panel2.TabIndex = 3;
+            this.reportsBtn.BackColor = System.Drawing.Color.Transparent;
+            this.reportsBtn.FlatAppearance.BorderSize = 0;
+            this.reportsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reportsBtn.Font = new System.Drawing.Font("Rockwell", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(15)))), ((int)(((byte)(21)))));
+            this.reportsBtn.Location = new System.Drawing.Point(8, 373);
+            this.reportsBtn.Name = "reportsBtn";
+            this.reportsBtn.Size = new System.Drawing.Size(142, 43);
+            this.reportsBtn.TabIndex = 4;
+            this.reportsBtn.Text = "Report";
+            this.reportsBtn.UseVisualStyleBackColor = false;
+            this.reportsBtn.Click += new System.EventHandler(this.reportsBtn_Click);
             // 
-            // dashboardHeader
+            // transactionsBtn
             // 
-            this.dashboardHeader.AutoSize = true;
-            this.dashboardHeader.Font = new System.Drawing.Font("Felix Titling", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dashboardHeader.Location = new System.Drawing.Point(32, 29);
-            this.dashboardHeader.Name = "dashboardHeader";
-            this.dashboardHeader.Size = new System.Drawing.Size(202, 34);
-            this.dashboardHeader.TabIndex = 3;
-            this.dashboardHeader.Text = "DASHBOARD";
+            this.transactionsBtn.BackColor = System.Drawing.Color.Transparent;
+            this.transactionsBtn.FlatAppearance.BorderSize = 0;
+            this.transactionsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.transactionsBtn.Font = new System.Drawing.Font("Rockwell", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transactionsBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(15)))), ((int)(((byte)(21)))));
+            this.transactionsBtn.Location = new System.Drawing.Point(8, 320);
+            this.transactionsBtn.Name = "transactionsBtn";
+            this.transactionsBtn.Size = new System.Drawing.Size(142, 43);
+            this.transactionsBtn.TabIndex = 3;
+            this.transactionsBtn.Text = "Transactions";
+            this.transactionsBtn.UseVisualStyleBackColor = false;
+            this.transactionsBtn.Click += new System.EventHandler(this.transactionsBtn_Click);
             // 
-            // transactionHeader
+            // supplierBtn
             // 
-            this.transactionHeader.AutoSize = true;
-            this.transactionHeader.Font = new System.Drawing.Font("Felix Titling", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transactionHeader.Location = new System.Drawing.Point(430, 295);
-            this.transactionHeader.Name = "transactionHeader";
-            this.transactionHeader.Size = new System.Drawing.Size(239, 34);
-            this.transactionHeader.TabIndex = 2;
-            this.transactionHeader.Text = "TRANSACTION";
+            this.supplierBtn.BackColor = System.Drawing.Color.Transparent;
+            this.supplierBtn.FlatAppearance.BorderSize = 0;
+            this.supplierBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.supplierBtn.Font = new System.Drawing.Font("Rockwell", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.supplierBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(15)))), ((int)(((byte)(21)))));
+            this.supplierBtn.Location = new System.Drawing.Point(8, 267);
+            this.supplierBtn.Name = "supplierBtn";
+            this.supplierBtn.Size = new System.Drawing.Size(142, 43);
+            this.supplierBtn.TabIndex = 2;
+            this.supplierBtn.Text = "Supplier";
+            this.supplierBtn.UseVisualStyleBackColor = false;
+            this.supplierBtn.Click += new System.EventHandler(this.supplierBtn_Click);
             // 
-            // MainForm
+            // sideBar
+            // 
+            this.sideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(178)))), ((int)(((byte)(184)))));
+            this.sideBar.Controls.Add(this.reportsBtn);
+            this.sideBar.Controls.Add(this.transactionsBtn);
+            this.sideBar.Controls.Add(this.supplierBtn);
+            this.sideBar.Controls.Add(this.productsBtn);
+            this.sideBar.Controls.Add(this.dashboardBtn);
+            this.sideBar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sideBar.Location = new System.Drawing.Point(0, 0);
+            this.sideBar.Name = "sideBar";
+            this.sideBar.Size = new System.Drawing.Size(159, 642);
+            this.sideBar.TabIndex = 4;
+            // 
+            // MainPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1248, 642);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(topPanel);
             this.Controls.Add(this.sideBar);
-            this.Controls.Add(this.panel2);
-            this.Name = "MainForm";
-            this.Size = new System.Drawing.Size(1264, 681);
-            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Name = "MainPage";
+            this.Text = "MainPage";
+            this.Load += new System.EventHandler(this.MainPage_Load);
             topPanel.ResumeLayout(false);
             topPanel.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.sideBar.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.sideBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel sideBar;
-        private System.Windows.Forms.Button reportsBtn;
-        private System.Windows.Forms.Button transactionsBtn;
-        private System.Windows.Forms.Button supplierBtn;
-        private System.Windows.Forms.Button productsBtn;
-        private System.Windows.Forms.Button dashboardBtn;
-        private System.Windows.Forms.Label displayEmail;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label dashboardHeader;
         private System.Windows.Forms.Label transactionHeader;
-
-        public FormStartPosition StartingPoint { get; private set; }
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label displayEmail;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button productsBtn;
+        private System.Windows.Forms.Button dashboardBtn;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button reportsBtn;
+        private System.Windows.Forms.Button transactionsBtn;
+        private System.Windows.Forms.Button supplierBtn;
+        private System.Windows.Forms.Panel sideBar;
     }
 }

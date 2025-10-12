@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace InventoryManagementSystem.UserControl
 {
-    public partial class ReportPage : System.Windows.Forms.UserControl
+    public partial class DashboardControl : System.Windows.Forms.UserControl
     {
-        public ReportPage()
+        public DashboardControl()
         {
             InitializeComponent();
         }

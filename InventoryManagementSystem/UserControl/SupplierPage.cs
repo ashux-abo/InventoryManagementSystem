@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace InventoryManagementSystem.UserControl
 {
-    public partial class SupplierPage : Form
+    public partial class SupplierPage : System.Windows.Forms.UserControl
     {
         public SupplierPage()
         {
