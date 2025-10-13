@@ -202,6 +202,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data Access\ProductRepository.cs" />
     <Compile Include="Data Access\UserRepository.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
@@ -227,6 +228,7 @@
     <Compile Include="Forms\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
