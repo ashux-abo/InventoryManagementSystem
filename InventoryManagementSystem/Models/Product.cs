@@ -11,7 +11,7 @@ namespace InventoryManagementSystem.Models
         public int ProductID { get; set; } //primary key
         public string Name { get; set; }
         public decimal Price { get; set; }
-        public string Decription { get; set; }
+        public string Description { get; set; }
         public int StockQuantity { get; set; }
     }
 }

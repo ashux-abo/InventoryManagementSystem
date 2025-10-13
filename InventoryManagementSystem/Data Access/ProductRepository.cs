@@ -12,7 +12,7 @@ namespace InventoryManagementSystem.Data_Access
     {
         private string connectionString = "Data Source=ASHLEY\\SQLEXPRESS;Initial Catalog=QuickStockDB;Integrated Security=True;";
         
-        public List<Product> GetAllProducts()
+        public List<Product> GetAllProducts()//fetch all products from the database
         {
             List<Product> products = new List<Product>();   
             string query = "SELECT ProductID, Name, Price, Description, StockQuantity FROM ProductTable"; //task1: create a table in the database with the same name and columns
