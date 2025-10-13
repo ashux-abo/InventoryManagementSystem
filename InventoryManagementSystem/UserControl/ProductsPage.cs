@@ -27,14 +27,14 @@ namespace InventoryManagementSystem.UserControl
             var productList = _repository.LoadProducts();
 
             //check if productList is not null or empty
-            if (productList != null || productList.Count > 0)
+            if (productList != null && productList.Count > 0)
             {
                 productsDataGridView.DataSource = productList;
                 return;
             }
             else
             {
-                productsDataGridView.DataSource = null;
+                productsDataGridView.DataSource = new List<Product>();
                 MessageBox.Show("No products found or an error occurred.");
             }
         }
@@ -46,9 +46,7 @@ namespace InventoryManagementSystem.UserControl
         //handles the save button click event to add a new product
         private void btnSave_Click(object sender, EventArgs e)
         {// Validate input fields
-            if (decimal.TryParse(priceTextBox.Text, out decimal price) &&
-        int.TryParse(quantityTextBox.Text, out int quantity))
-            {
+           
                 Product newProduct = new Product
                 {
                     ProductName = nameTextBox.Text,
@@ -66,11 +64,6 @@ namespace InventoryManagementSystem.UserControl
                 {
                     MessageBox.Show("Failed to add product. Please try again.");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Please enter valid numbers for Price and Stock Quantity.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
     }
 }
