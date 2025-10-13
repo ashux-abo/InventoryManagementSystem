@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using InventoryManagementSystem.Services;
-
+using InventoryManagementSystem.Models;
 namespace InventoryManagementSystem.UserControl
 {
     public partial class ProductsPage : System.Windows.Forms.UserControl
@@ -42,6 +42,35 @@ namespace InventoryManagementSystem.UserControl
         private void ProductsPage_Load(object sender, EventArgs e)
         {
 
+        }
+        //handles the save button click event to add a new product
+        private void btnSave_Click(object sender, EventArgs e)
+        {// Validate input fields
+            if (decimal.TryParse(priceTextBox.Text, out decimal price) &&
+        int.TryParse(quantityTextBox.Text, out int quantity))
+            {
+                Product newProduct = new Product
+                {
+                    ProductName = nameTextBox.Text,
+                    ProductDesc = descTextBox.Text,
+                    Price = decimal.Parse(priceTextBox.Text),
+                    StockQuantity = int.Parse(quantityTextBox.Text)
+                };
+
+                if (_repository.CreateNewProduct(newProduct))
+                {
+                    MessageBox.Show("Product added successfully!");
+                    LoadProductData(); // Refresh the product list
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add product. Please try again.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter valid numbers for Price and Stock Quantity.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

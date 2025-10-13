@@ -15,7 +15,7 @@ namespace InventoryManagementSystem.Data_Access
         public List<Product> GetAllProducts()//fetch all products from the database
         {
             List<Product> products = new List<Product>();   
-            string query = "SELECT ProductID, Name, Price, Description, StockQuantity FROM ProductTable"; //task1: create a table in the database with the same name and columns
+            string query = "SELECT ProductID, ProductName, Price, ProductDesc, StockQuantity FROM ProductTable"; //task1: create a table in the database with the same name and columns
 
             using(SqlConnection connection = new SqlConnection(connectionString)) 
             {
@@ -30,11 +30,11 @@ namespace InventoryManagementSystem.Data_Access
                             {
                                 products.Add(new Product
                                 {
-                                    ProductID = reader.GetInt32(0),
-                                    Name = reader.GetString(1),
-                                    Price = reader.GetDecimal(2),
-                                    Description = reader.GetString(1),
-                                    StockQuantity = reader.GetInt32(3)
+                                    ProductID = reader.GetInt32(reader.GetOrdinal("ProductID")),
+                                    ProductName = reader.GetString(reader.GetOrdinal("ProductName")),
+                                    Price = reader.GetDecimal(reader.GetOrdinal("Price")),
+                                    ProductDesc = reader.IsDBNull(reader.GetOrdinal("ProductDesc")) ? null : reader.GetString(reader.GetOrdinal("ProductDesc")),
+                                    StockQuantity = reader.GetInt32(reader.GetOrdinal("StockQuantity"))
                                 });
                             }
                         }
@@ -47,6 +47,35 @@ namespace InventoryManagementSystem.Data_Access
             }
             return products;
         }
+        //data access method to add a new product to the database
+        public bool AddProduct(Product product)
+        {
+            string query = @"INSERT INTO ProductTable 
+                (ProductName, Price, ProductDesc, StockQuantity) 
+                VALUES (@Name, @Desc, @Price, @StockQuantity)";
 
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Name", product.ProductName);
+                    command.Parameters.AddWithValue("@Desc", product.ProductDesc);
+                    command.Parameters.AddWithValue("@Price", product.Price);
+                    command.Parameters.AddWithValue("@StockQuantity", product.StockQuantity);
+
+                    try
+                    {
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery(); 
+                        return rowsAffected > 0; //if one or more rows were affected, the insert was successful
+                    }
+                    catch (SqlException ex)
+                    {
+                        Console.WriteLine("SQL Error (AddProduct): " + ex.Message);
+                        return false;
+                    }
+                }
+            }
+        }
     }
 }

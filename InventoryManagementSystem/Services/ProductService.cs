@@ -21,5 +21,11 @@ namespace InventoryManagementSystem.Services
             //next task: add business logic and validation here before returning data
             return _repository.GetAllProducts();
         }
+
+        public bool CreateNewProduct(Product product)
+        {
+            //next task: add business logic and validation here before adding a new product
+            return _repository.AddProduct(product);
+        }
     }
 }
