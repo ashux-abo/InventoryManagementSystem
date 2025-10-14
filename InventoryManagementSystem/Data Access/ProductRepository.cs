@@ -52,15 +52,15 @@ namespace InventoryManagementSystem.Data_Access
         {
             string query = @"INSERT INTO ProductTable 
                 (ProductName, Price, ProductDesc, StockQuantity) 
-                VALUES (@Name, @Desc, @Price, @StockQuantity)";
+                VALUES (@Name, @Price, @Desc, @StockQuantity)";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Name", product.ProductName);
-                    command.Parameters.AddWithValue("@Desc", product.ProductDesc);
                     command.Parameters.AddWithValue("@Price", product.Price);
+                    command.Parameters.AddWithValue("@Desc", (object)product.ProductDesc ?? DBNull.Value);
                     command.Parameters.AddWithValue("@StockQuantity", product.StockQuantity);
 
                     try
@@ -71,7 +71,11 @@ namespace InventoryManagementSystem.Data_Access
                     }
                     catch (SqlException ex)
                     {
-                        Console.WriteLine("SQL Error (AddProduct): " + ex.Message);
+                        System.Windows.Forms.MessageBox.Show(
+                         $"SQL Error: {ex.Message}\n\nDetails: {ex.ToString()}",
+                         "Database Error",
+                         System.Windows.Forms.MessageBoxButtons.OK,
+                         System.Windows.Forms.MessageBoxIcon.Error);
                         return false;
                     }
                 }

@@ -58,11 +58,18 @@ namespace InventoryManagementSystem.UserControl
                 if (_repository.CreateNewProduct(newProduct))
                 {
                     MessageBox.Show("Product added successfully!");
-                    LoadProductData(); // Refresh the product list
-                }
-                else
+                    LoadProductData();
+
+                // Clear input fields
+                nameTextBox.Clear();
+                descTextBox.Clear();
+                priceTextBox.Clear();
+                quantityTextBox.Clear();
+
+            }
+            else
                 {
-                    MessageBox.Show("Failed to add product. Please try again.");
+                MessageBox.Show("Failed to add product. Please try again.");
                 }
         }
     }
