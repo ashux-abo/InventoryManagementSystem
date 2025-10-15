@@ -72,5 +72,19 @@ namespace InventoryManagementSystem.UserControl
                 MessageBox.Show("Failed to add product. Please try again.");
                 }
         }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void productsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                var val = this.productsDataGridView[e.ColumnIndex, e.RowIndex].Value.ToString();
+                MessageBox.Show(val);
+            }
+        }
     }
 }

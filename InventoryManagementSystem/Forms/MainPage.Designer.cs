@@ -31,6 +31,7 @@
             System.Windows.Forms.Panel topPanel;
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.displayEmail = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dashboardHeader = new System.Windows.Forms.Label();
             this.transactionHeader = new System.Windows.Forms.Label();
@@ -41,13 +42,13 @@
             this.transactionsBtn = new System.Windows.Forms.Button();
             this.supplierBtn = new System.Windows.Forms.Button();
             this.sideBar = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.logoutBtn = new System.Windows.Forms.Button();
             topPanel = new System.Windows.Forms.Panel();
             topPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.sideBar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // topPanel
@@ -85,6 +86,19 @@
             this.displayEmail.TabIndex = 0;
             this.displayEmail.Text = "label1";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::InventoryManagementSystem.Properties.Resources.Four_Ways_to_Put_Internet_Profiles_to_Good_Use;
+            this.pictureBox1.Location = new System.Drawing.Point(61, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(178)))), ((int)(((byte)(184)))));
@@ -92,7 +106,7 @@
             this.panel2.Controls.Add(this.transactionHeader);
             this.panel2.Location = new System.Drawing.Point(168, 56);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1088, 606);
+            this.panel2.Size = new System.Drawing.Size(1088, 586);
             this.panel2.TabIndex = 6;
             // 
             // dashboardHeader
@@ -197,6 +211,7 @@
             // sideBar
             // 
             this.sideBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(178)))), ((int)(((byte)(184)))));
+            this.sideBar.Controls.Add(this.logoutBtn);
             this.sideBar.Controls.Add(this.reportsBtn);
             this.sideBar.Controls.Add(this.transactionsBtn);
             this.sideBar.Controls.Add(this.supplierBtn);
@@ -208,18 +223,19 @@
             this.sideBar.Size = new System.Drawing.Size(159, 642);
             this.sideBar.TabIndex = 4;
             // 
-            // pictureBox1
+            // logoutBtn
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::InventoryManagementSystem.Properties.Resources.Four_Ways_to_Put_Internet_Profiles_to_Good_Use;
-            this.pictureBox1.Location = new System.Drawing.Point(61, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.logoutBtn.BackColor = System.Drawing.Color.Transparent;
+            this.logoutBtn.FlatAppearance.BorderSize = 0;
+            this.logoutBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.logoutBtn.Font = new System.Drawing.Font("Rockwell", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(15)))), ((int)(((byte)(21)))));
+            this.logoutBtn.Location = new System.Drawing.Point(8, 587);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(142, 43);
+            this.logoutBtn.TabIndex = 5;
+            this.logoutBtn.Text = "Logout";
+            this.logoutBtn.UseVisualStyleBackColor = false;
             // 
             // MainPage
             // 
@@ -236,10 +252,10 @@
             topPanel.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.sideBar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -259,5 +275,6 @@
         private System.Windows.Forms.Button transactionsBtn;
         private System.Windows.Forms.Button supplierBtn;
         private System.Windows.Forms.Panel sideBar;
+        private System.Windows.Forms.Button logoutBtn;
     }
 }

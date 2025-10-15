@@ -81,5 +81,37 @@ namespace InventoryManagementSystem.Data_Access
                 }
             }
         }
+        public bool UpdateProduct(Product product)
+        {
+            string query = @"UPDATE ProductTable SET 
+                ProductName = @Name, 
+                Price = @Price, 
+                ProductDesc = @Desc, 
+                StockQuantity = @StockQuantity 
+                WHERE ProductID = @ProductID";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using(SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Name", product.ProductName);
+                    command.Parameters.AddWithValue("@Price", product.Price);
+                    command.Parameters.AddWithValue("@Desc", (object)product.ProductDesc ?? DBNull.Value);
+                    command.Parameters.AddWithValue("@StockQuantity", product.StockQuantity);
+                    command.Parameters.AddWithValue("@ProductID", product.ProductID);
+                    try
+                    {
+                        connection.Open();
+                        int rowsAffected = command.ExecuteNonQuery();
+                        return rowsAffected > 0; //if one or more rows were affected, the update was successful
+                    }
+                    catch(SqlException ex)
+                    {
+                        Console.WriteLine("SQL Error (UpdateProduct): " + ex.Message);
+                        return false;
+                    }
+                }
+            }
+        }
     }
 }
