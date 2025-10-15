@@ -40,6 +40,9 @@
             this.quantityTextBox = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.searchBar = new System.Windows.Forms.TextBox();
+            this.editBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,10 +59,11 @@
             // productsDataGridView
             // 
             this.productsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.productsDataGridView.Location = new System.Drawing.Point(439, 22);
+            this.productsDataGridView.Location = new System.Drawing.Point(433, 53);
             this.productsDataGridView.Name = "productsDataGridView";
-            this.productsDataGridView.Size = new System.Drawing.Size(592, 342);
+            this.productsDataGridView.Size = new System.Drawing.Size(592, 256);
             this.productsDataGridView.TabIndex = 3;
+            this.productsDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productsDataGridView_CellContentClick);
             // 
             // label1
             // 
@@ -144,10 +148,39 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // searchBar
+            // 
+            this.searchBar.Location = new System.Drawing.Point(433, 22);
+            this.searchBar.Name = "searchBar";
+            this.searchBar.Size = new System.Drawing.Size(187, 20);
+            this.searchBar.TabIndex = 14;
+            // 
+            // editBtn
+            // 
+            this.editBtn.Location = new System.Drawing.Point(950, 24);
+            this.editBtn.Name = "editBtn";
+            this.editBtn.Size = new System.Drawing.Size(75, 23);
+            this.editBtn.TabIndex = 15;
+            this.editBtn.Text = "Edit";
+            this.editBtn.UseVisualStyleBackColor = true;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(869, 24);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // ProductsPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.editBtn);
+            this.Controls.Add(this.searchBar);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.quantityTextBox);
@@ -183,5 +216,8 @@
         private System.Windows.Forms.TextBox quantityTextBox;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox searchBar;
+        private System.Windows.Forms.Button editBtn;
+        private System.Windows.Forms.Button button1;
     }
 }

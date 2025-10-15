@@ -27,14 +27,14 @@ namespace InventoryManagementSystem.UserControl
             var productList = _repository.LoadProducts();
 
             //check if productList is not null or empty
-            if (productList != null || productList.Count > 0)
+            if (productList != null && productList.Count > 0)
             {
                 productsDataGridView.DataSource = productList;
                 return;
             }
             else
             {
-                productsDataGridView.DataSource = null;
+                productsDataGridView.DataSource = new List<Product>();
                 MessageBox.Show("No products found or an error occurred.");
             }
         }
@@ -46,9 +46,7 @@ namespace InventoryManagementSystem.UserControl
         //handles the save button click event to add a new product
         private void btnSave_Click(object sender, EventArgs e)
         {// Validate input fields
-            if (decimal.TryParse(priceTextBox.Text, out decimal price) &&
-        int.TryParse(quantityTextBox.Text, out int quantity))
-            {
+           
                 Product newProduct = new Product
                 {
                     ProductName = nameTextBox.Text,
@@ -60,16 +58,32 @@ namespace InventoryManagementSystem.UserControl
                 if (_repository.CreateNewProduct(newProduct))
                 {
                     MessageBox.Show("Product added successfully!");
-                    LoadProductData(); // Refresh the product list
-                }
-                else
-                {
-                    MessageBox.Show("Failed to add product. Please try again.");
-                }
+                    LoadProductData();
+
+                // Clear input fields
+                nameTextBox.Clear();
+                descTextBox.Clear();
+                priceTextBox.Clear();
+                quantityTextBox.Clear();
+
             }
             else
+                {
+                MessageBox.Show("Failed to add product. Please try again.");
+                }
+        }
+
+        private void editBtn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void productsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1)
             {
-                MessageBox.Show("Please enter valid numbers for Price and Stock Quantity.", "Input Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                var val = this.productsDataGridView[e.ColumnIndex, e.RowIndex].Value.ToString();
+                MessageBox.Show(val);
             }
         }
     }
